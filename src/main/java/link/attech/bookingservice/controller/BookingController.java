@@ -6,6 +6,8 @@ import link.attech.bookingservice.service.BookingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("booking")
@@ -20,5 +22,10 @@ public class BookingController {
     @PostMapping
     public BaseResponse<BookingModel> addBooking(@RequestBody BookingModel bookingModel){
         return bookingService.addBooking(bookingModel);
+    }
+
+    @GetMapping
+    public BaseResponse<List<BookingModel>> getBookings(){
+        return bookingService.getBooking();
     }
 }
