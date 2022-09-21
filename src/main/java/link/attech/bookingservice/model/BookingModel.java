@@ -1,28 +1,19 @@
-package link.attech.bookingservice.entity;
+package link.attech.bookingservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Builder
-@Entity
-@Table(name = "bookings")
-public class Booking {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long bookingId;
+public class BookingModel {
     private String passenger;
     private String email;
     private String phone;
-    private String bookingReference;
     private String transportationSource;
     private String transportationDestination;
-
+    private String bookingReference;
 }
